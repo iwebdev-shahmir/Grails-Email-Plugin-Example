@@ -11,7 +11,7 @@ class PublicController {
     def formModel(){
     }
     def create(){
-//        def resp = [:]
+
         if (params){
             println params
             def userDetails = new UserDetails()
@@ -27,20 +27,18 @@ class PublicController {
                     println it
                 }
                 redirect action: "failure"
-//                resp = [status: false, code: 101, message: 'Username / Password Not Found']
-
             }
             else {
-//                sendMail {
-//                    to "minhasshahmir@gmail.com"
-//                    subject "test"`
-//                    text "mail teest"
-//                }
+                sendMail {
+                   to "users_email_here@mail.com" 
+                    subject "mail subject here"`
+                    text "mail body here"
+                }
                 redirect action: "confirmation"
-//                resp = [status: true, code: 000, message: 'Joined Successfully']
+              
             }
         }
-//        render resp as JSON
+       
     }
     def contact(){
 
